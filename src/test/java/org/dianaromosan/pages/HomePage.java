@@ -21,11 +21,13 @@ public class HomePage extends PageObject {
     @FindBy(css = "#app > div > div > div.home-body > div > div:nth-child(6) > div > div.avatar.mx-auto.white > svg")
     private WebElementFacade bookStoreApplicationLink;
 
+
     public void clickElementsLink(){clickOn(elementsLink);}
     public void clickFormsLink(){clickOn(formsLink);}
     public void clickAlertsFrameAndWindowsLink(){clickOn(alertsFrameAndWindowsLink);}
     public void clickWidgetsLink(){clickOn(widgetsLink);}
     public void clickInteractionsLink(){clickOn(interactionsLink);}
     public void clickBookStoreApplicationLink(){clickOn(bookStoreApplicationLink);}
+
 
 }

@@ -4,11 +4,13 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.dianaromosan.pages.ElementsPage;
 import org.dianaromosan.pages.HomePage;
+import org.junit.Assert;
 
 public class ElementsSteps {
     private HomePage homePage;
     private ElementsPage elementsPage;
 
+    //Steps for Text Box Tests
     @Step
     public void navigateToTextBox(){
         homePage.open();
@@ -21,9 +23,7 @@ public class ElementsSteps {
         elementsPage.clickSubmitButton();
     }
     @Step
-    public void setUserName(String userName){
-        elementsPage.setUserNameField(userName);
-    }
+    public void setUserName(String userName){ elementsPage.setUserNameField(userName); }
     @Step
     public void setUserEmail(String userEmail){
         elementsPage.setUserEmailField(userEmail);
@@ -43,5 +43,32 @@ public class ElementsSteps {
         setUserEmail(userEmail);
         setCurrentAddress(currentAddress);
         setPermanentAddress(permanentAddress);
+
     }
+    @Step
+    public void verifyTextBoxMsg(String message){
+        elementsPage.verifyTextBoxPageMsg(message);
+    }
+    @Step
+    public void verifyIfUserInfoIsDisplayed(String informationName){
+        //Assert.assertTrue(elementsPage.verifyUserInfoIsDisplayed(informationName));
+        elementsPage.verifyUserInformation(informationName);
+    }
+
+    //Steps for Check Box Tests
+    @Step
+    public void navigateToCheckBox(){
+            homePage.open();
+            homePage.clickElementsLink();
+            elementsPage.clickCheckBoxLink();
+    }
+    @Step
+    public void checkCheckBox(){
+        elementsPage.checkCheckBoxIcon();
+    }
+    @Step
+    public void verifyCheckBoxMsg(String checkBoxMsg){
+        elementsPage.verifyCheckBoxMsg(checkBoxMsg);
+    }
+
 }
