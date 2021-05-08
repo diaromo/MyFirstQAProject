@@ -70,5 +70,23 @@ public class ElementsSteps {
     public void verifyCheckBoxMsg(String checkBoxMsg){
         elementsPage.verifyCheckBoxMsg(checkBoxMsg);
     }
+    @Step
+    public void clickExpandButton(){elementsPage.clickExpandButton();}
+
+    //Steps for Radio Buttons
+    @Step
+    public void navigateToRadioButtons(){
+        homePage.open();
+        homePage.clickElementsLink();
+        elementsPage.clickRadioButtonLink();
+    }
+    @Step
+    public void clickYesRadioButton(){elementsPage.clickYesRadioButton();}
+    @Step
+    public void clickImpressiveRadioButton(){elementsPage.clickImpressiveRadioButton();}
+    @Step
+    public void clickNoRadioButton(){elementsPage.clickNoRadioButton();}
+    @Step
+    public void verifyYesMsg(String yesMsg){elementsPage.verifyYesMsg(yesMsg);}
 
 }

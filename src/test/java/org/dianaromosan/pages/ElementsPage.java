@@ -72,6 +72,9 @@ public class ElementsPage<myList> extends PageObject {
     private WebElementFacade checkBox;
     @FindBy(css = "#result")
     private WebElementFacade checkBoxMsg;
+    @FindBy (css = "button.rct-option.rct-option-expand-all")
+    private WebElementFacade expandButton;
+
 
 
     public void clickTextBoxLink(){clickOn(textBoxLink);}
@@ -84,7 +87,27 @@ public class ElementsPage<myList> extends PageObject {
     public void verifyUserInformation(String userInformation){shouldContainText(userInformation);}
     public void clickCheckBoxLink(){clickOn(checkBoxLink);}
     public void checkCheckBoxIcon(){clickOn(checkBox);}
-    public void verifyCheckBoxMsg(String checkBoxMessage){shouldBeDisplayed();}
+    public void verifyCheckBoxMsg(String checkBoxMessage){shouldContainText(checkBoxMessage);}
+    public void clickExpandButton(){clickOn(expandButton);}
+
+    //CSS for Elements Radio Box Tests
+    @FindBy(css = "#item-2")
+    private WebElementFacade radioBoxButton;
+    @FindBy(css = "#yesRadio")
+    private WebElementFacade yesRadioButton;
+    @FindBy(css = "#impressiveRadio")
+    private WebElementFacade impressiveRadioButton;
+    @FindBy(css ="#noRadio")
+    private WebElementFacade noRadioButton;
+    @FindBy(css = "div:nth-child(1) > p")
+    private WebElementFacade yesConfirmationSelection;
+
+
+    public void clickRadioButtonLink(){clickOn(radioBoxButton);}
+    public void clickYesRadioButton(){clickOn(yesRadioButton);}
+    public void clickImpressiveRadioButton(){clickOn(impressiveRadioButton);}
+    public void clickNoRadioButton(){clickOn(noRadioButton);}
+    public void verifyYesMsg(String yesMsg){shouldContainText(yesMsg);}
 
 
 

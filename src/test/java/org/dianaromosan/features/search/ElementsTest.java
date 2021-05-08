@@ -50,7 +50,34 @@ public class ElementsTest extends BaseTest {
         elementsSteps.navigateToCheckBox();
         elementsSteps.checkCheckBox();
     //Assert all categories are displayed in confirmation msg
-        elementsSteps.verifyCheckBoxMsg("desktp");//to check
+        elementsSteps.verifyCheckBoxMsg("deskto");//to check - assert is not correct
 
     }
+
+    //Test 2 - Check expand button works
+    @Test
+    public void checkExpandButton(){
+        elementsSteps.navigateToCheckBox();
+        elementsSteps.clickExpandButton();
+        //need to assert
+    }
+
+    //Radio Button Tests
+    //Test 1 - Check Yes Radio Button Works
+    @Test
+    public void selectYesOption(){
+        elementsSteps.navigateToRadioButtons();
+        elementsSteps.clickYesRadioButton();
+        elementsSteps.verifyYesMsg("You have selected Yes");
+    }
+    @Test
+    public void selectImpressiveOption(){
+        elementsSteps.navigateToRadioButtons();
+        elementsSteps.clickImpressiveRadioButton();
+    }
+    @Test
+    public void selectNoOption(){
+        elementsSteps.navigateToRadioButtons();
+        elementsSteps.clickNoRadioButton();}
+
 }
