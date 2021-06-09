@@ -34,6 +34,6 @@ public class FormsPage extends PageObject {
     }
     public void setFormFirstName(String firstNameForm){typeInto(formFirstName, firstNameForm);}
     public void setFormLastName(String lastNameForm){typeInto(formLastname, lastNameForm);}
-
+    public void setFormEmail(String emailForm){typeInto(formEmail, emailForm);}
   }
 
