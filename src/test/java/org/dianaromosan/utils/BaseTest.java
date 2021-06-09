@@ -17,4 +17,6 @@ public class BaseTest {
     public void setup(){
         webDriver.manage().window().maximize();
     }
+
+
 }

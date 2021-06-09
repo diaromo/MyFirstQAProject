@@ -1,26 +1,16 @@
 package org.dianaromosan.features.search;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.dianaromosan.steps.serenity.ElementsSteps;
 import org.dianaromosan.utils.BaseTest;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
-
 
 
 public class ElementsTest extends BaseTest {
 
-
-
-    private WebDriver webDriver;
-
-
     @Steps
     private ElementsSteps elementsSteps;
+
 
     //Text Box Tests
     //Test 1 Go to Text Box Page, Fill in text fields with valid information and Submit
@@ -50,7 +40,7 @@ public class ElementsTest extends BaseTest {
         elementsSteps.navigateToCheckBox();
         elementsSteps.checkCheckBox();
     //Assert all categories are displayed in confirmation msg
-        elementsSteps.verifyCheckBoxMsg("deskto");//to check - assert is not correct
+        elementsSteps.verifyCheckBoxMsg("home");
 
     }
 
@@ -59,11 +49,12 @@ public class ElementsTest extends BaseTest {
     public void checkExpandButton(){
         elementsSteps.navigateToCheckBox();
         elementsSteps.clickExpandButton();
-        //need to assert
+    //Assert all tree structure names are displayed in confirmation msg
+        elementsSteps.verifyTreeStructure("Office");
     }
 
     //Radio Button Tests
-    //Test 1 - Check Yes Radio Button Works
+    //Test 1,2,3 - Check Radio Buttons Work
     @Test
     public void selectYesOption(){
         elementsSteps.navigateToRadioButtons();
@@ -74,10 +65,66 @@ public class ElementsTest extends BaseTest {
     public void selectImpressiveOption(){
         elementsSteps.navigateToRadioButtons();
         elementsSteps.clickImpressiveRadioButton();
+        elementsSteps.verifyImpressiveMsg("You have selected Impressive");
     }
     @Test
     public void selectNoOption(){
         elementsSteps.navigateToRadioButtons();
         elementsSteps.clickNoRadioButton();}
+        //No button doesn't work - how to assert?
+
+    //WebTables Tests
+    //Valid Add people to WebTableTest
+    @Test
+    public void validAddPeopleToWebTable() {
+        elementsSteps.navigateToWebTableAndAdd();
+        elementsSteps.fillInWebTableUserInfo("Diana", "Romosan", "romosandiana@gmail.com", "25", "20", "OFA");
+        elementsSteps.clickSubmitButton();
+        elementsSteps.verifyIfNameIsAddedToWebTable("Diana", "Romosan");}
+
+    //Buttons - validate buttons are working
+    @Test
+    public void buttonsWork() throws InterruptedException {
+        elementsSteps.navigateToButtonsLink();
+        elementsSteps.doubleClick();
+        elementsSteps.doubleClickMsgIsEqual("You have done a double click");
+        elementsSteps.switchToRightClickButton();
+        elementsSteps.rightClick();
+        Thread.sleep(2000);
+        elementsSteps.rightClickMsgIsEqual("You have done a right click");
+
+    }
+    //Links - Home Link is opening in new window
+    @Test
+    public void validHomeLink(){
+        elementsSteps.navigateToLink();
+        elementsSteps.clickHomeButton();
+        elementsSteps.checkNewTabOpens();
+    }
+    //Broken Links - Images
+    @Test
+    public void BrokenLink(){
+        //elementsSteps.navigateToBrokenLinksAndImg();
+
+    }
+
+    //Download and upload
+    @Test
+    public void downloadFileWorks(){
+        elementsSteps.navigateToDownloadAndUpload();
+        elementsSteps.clickDownloadButton();
+        elementsSteps.verifyFileIsDownloaded("C:\\Users\\dianaromosan\\Downloads","sampleFile");
+    }
+    @Test
+    public void uploadFileWorks(){
+        elementsSteps.navigateToDownloadAndUpload();
+        elementsSteps.clickUploadButton();
+    }
+
+    //Forms Tests
+    @Test
+    public void openForm(){
+        elementsSteps.navigateToPracticeForms();
+    }
 
 }
