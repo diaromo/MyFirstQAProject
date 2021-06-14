@@ -2,6 +2,7 @@ package org.dianaromosan.features.search;
 
 import net.thucydides.core.annotations.Steps;
 import org.dianaromosan.steps.serenity.ElementsSteps;
+import org.dianaromosan.steps.serenity.FormSteps;
 import org.dianaromosan.utils.BaseTest;
 import org.junit.Test;
 
@@ -10,6 +11,8 @@ public class ElementsTest extends BaseTest {
 
     @Steps
     private ElementsSteps elementsSteps;
+    @Steps
+    private FormSteps formSteps;
 
 
     //Text Box Tests
@@ -121,10 +124,7 @@ public class ElementsTest extends BaseTest {
         elementsSteps.clickUploadButton();
     }
 
-    //Forms Tests
-    @Test
-    public void openForm(){
-        elementsSteps.navigateToPracticeForms();
-    }
+
+
 
 }

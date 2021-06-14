@@ -17,7 +17,7 @@ import java.util.List;
 
 public class  ElementsPage extends PageObject {
 
-    private WebDriver driver;
+    //private WebDriver driver;
 
 //CSS for Elements Text Box Tests
 

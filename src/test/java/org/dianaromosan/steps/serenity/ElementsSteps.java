@@ -1,16 +1,14 @@
 package org.dianaromosan.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
-import org.apache.http.conn.util.PublicSuffixList;
 import org.dianaromosan.pages.ElementsPage;
-import org.dianaromosan.pages.FormsPage;
 import org.dianaromosan.pages.HomePage;
 import org.junit.Assert;
 
 public class ElementsSteps {
     private HomePage homePage;
     private ElementsPage elementsPage;
-    private FormsPage formsPage;
+
 
 
     //Steps for Text Box Tests
@@ -216,13 +214,4 @@ public class ElementsSteps {
     public void clickUploadButton(){
         elementsPage.sendKeysUpload();
     }
-
-    //Forms Steps
-    @Step
-    public void navigateToPracticeForms(){
-        homePage.open();
-        homePage.clickFormsLink();
-        formsPage.clickPracticeFormsLink();
-    }
-
 }

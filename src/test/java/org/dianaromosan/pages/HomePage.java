@@ -10,11 +10,11 @@ public class HomePage extends PageObject {
 
     @FindBy(css = "#app > div > div > div.home-body > div > div:nth-child(1) > div > div.avatar.mx-auto.white > svg > path")
     private WebElementFacade elementsLink;
-    @FindBy(css = "#app > div > div > div.home-body > div > div:nth-child(2) > div > div.avatar.mx-auto.white > svg")
+    @FindBy(css = "#app > div > div > div.home-body > div > div:nth-child(2) > div > div.card-body")
     private WebElementFacade formsLink;
     @FindBy(css = "#app > div > div > div.home-body > div > div:nth-child(3) > div > div.avatar.mx-auto.white > svg")
     private WebElementFacade alertsFrameAndWindowsLink;
-    @FindBy(css = "#app > div > div > div.home-body > div > div:nth-child(4) > div > div.avatar.mx-auto.white > svg > path")
+    @FindBy(css = "#app > div > div > div.row > div:nth-child(1) > div > div > div:nth-child(3) > span > div > div.header-text")
     private WebElementFacade widgetsLink;
     @FindBy(css = "#app > div > div > div.home-body > div > div:nth-child(5) > div > div.avatar.mx-auto.white > svg")
     private WebElementFacade interactionsLink;
