@@ -25,7 +25,7 @@ public class WidgetDatePickerPage extends PageObject {
 
     public void checkDateIsCorrect(String date){
         WebElement selectedDate = getDriver().findElement(By.cssSelector("#datePickerMonthYearInput"));
-        Assert.assertEquals(date,selectedDate.getText());
+        Assert.assertEquals(date,selectedDate.getAttribute("value"));//Wrong element
 
     }
 }
