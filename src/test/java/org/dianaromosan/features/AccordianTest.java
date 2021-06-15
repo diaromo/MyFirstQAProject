@@ -1,7 +1,7 @@
-package org.dianaromosan.features.search;
+package org.dianaromosan.features;
 
 import net.thucydides.core.annotations.Steps;
-import org.dianaromosan.steps.serenity.WidgetAccordianSteps;
+import org.dianaromosan.steps.WidgetAccordianSteps;
 import org.dianaromosan.utils.BaseTest;
 import org.junit.Test;
 

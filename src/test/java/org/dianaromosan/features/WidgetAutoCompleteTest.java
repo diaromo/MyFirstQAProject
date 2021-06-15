@@ -1,7 +1,7 @@
-package org.dianaromosan.features.search;
+package org.dianaromosan.features;
 
 import net.thucydides.core.annotations.Steps;
-import org.dianaromosan.steps.serenity.WidgetAutoCompleteSteps;
+import org.dianaromosan.steps.WidgetAutoCompleteSteps;
 import org.dianaromosan.utils.BaseTest;
 import org.junit.Test;
 

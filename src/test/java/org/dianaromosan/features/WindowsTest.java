@@ -1,6 +1,6 @@
-package org.dianaromosan.features.search;
+package org.dianaromosan.features;
 
-import org.dianaromosan.steps.serenity.WindowsSteps;
+import org.dianaromosan.steps.WindowsSteps;
 import org.dianaromosan.utils.BaseTest;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;

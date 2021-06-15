@@ -1,8 +1,8 @@
-package org.dianaromosan.features.search;
+package org.dianaromosan.features;
 
 import net.thucydides.core.annotations.Steps;
-import org.dianaromosan.steps.serenity.ElementsSteps;
-import org.dianaromosan.steps.serenity.FormSteps;
+import org.dianaromosan.steps.ElementsSteps;
+import org.dianaromosan.steps.FormSteps;
 import org.dianaromosan.utils.BaseTest;
 import org.junit.Test;
 

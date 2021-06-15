@@ -1,7 +1,7 @@
-package org.dianaromosan.features.search;
+package org.dianaromosan.features;
 
 import net.thucydides.core.annotations.Steps;
-import org.dianaromosan.steps.serenity.AlertSteps;
+import org.dianaromosan.steps.AlertSteps;
 import org.dianaromosan.utils.BaseTest;
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ public class AlertsTest extends BaseTest {
     private AlertSteps alertSteps;
 
     @Test
-    public void SeeAlertButtonWorks(){
+    public void seeAlertButtonWorks(){
         alertSteps.openAlertPage();
         alertSteps.selectSeeAlertButton();
         alertSteps.checkAlert();

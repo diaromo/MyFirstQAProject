@@ -1,9 +1,10 @@
-package org.dianaromosan.features.search;
+package org.dianaromosan.features;
 
 import net.thucydides.core.annotations.Steps;
-import org.dianaromosan.steps.serenity.ElementsSteps;
-import org.dianaromosan.steps.serenity.FormSteps;
+import org.dianaromosan.steps.ElementsSteps;
+import org.dianaromosan.steps.FormSteps;
 import org.dianaromosan.utils.BaseTest;
+import org.junit.After;
 import org.junit.Test;
 
 
@@ -15,12 +16,14 @@ public class ElementsTest extends BaseTest {
     private FormSteps formSteps;
 
 
+    private String name = "Diana Romosan";
+
     //Text Box Tests
     //Test 1 Go to Text Box Page, Fill in text fields with valid information and Submit
     @Test
     public void validCredentialTest(){
         elementsSteps.navigateToTextBox();
-        elementsSteps.setUserInformationFields("Diana Romosan", "romosandiana@gmail.com", "Zorilor","Cluj");
+        elementsSteps.setUserInformationFields(name, "romosandiana@gmail.com", "Zorilor","Cluj");
         elementsSteps.clickSubmitButton();
     //Assert
         elementsSteps.verifyIfUserInfoIsDisplayed("Cluj");
@@ -87,13 +90,12 @@ public class ElementsTest extends BaseTest {
 
     //Buttons - validate buttons are working
     @Test
-    public void buttonsWork() throws InterruptedException {
+    public void buttonsWork() {
         elementsSteps.navigateToButtonsLink();
         elementsSteps.doubleClick();
         elementsSteps.doubleClickMsgIsEqual("You have done a double click");
         elementsSteps.switchToRightClickButton();
         elementsSteps.rightClick();
-        Thread.sleep(2000);
         elementsSteps.rightClickMsgIsEqual("You have done a right click");
 
     }
@@ -123,6 +125,7 @@ public class ElementsTest extends BaseTest {
         elementsSteps.navigateToDownloadAndUpload();
         elementsSteps.clickUploadButton();
     }
+
 
 
 

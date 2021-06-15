@@ -1,4 +1,4 @@
-package org.dianaromosan.steps.serenity;
+package org.dianaromosan.steps;
 
 import net.thucydides.core.annotations.Step;
 import org.dianaromosan.pages.WidgetAccordianPage;
