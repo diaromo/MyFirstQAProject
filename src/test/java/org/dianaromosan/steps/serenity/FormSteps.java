@@ -36,7 +36,7 @@ public class FormSteps {
     }
     @Step
     public void selectBirthMonth(){
-        formPage.selectBirthMonth();
+        formPage.selectBirthDate();
     }
     @Step
     public void clickReadingHobbies(){

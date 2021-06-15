@@ -42,7 +42,7 @@ public class FormPage extends PageObject {
     public void clickFemaleGender(){ clickOn(formFemaleGender); }
     public void setFormNumber(String numberForm){typeInto(formUserNumber, numberForm);}
     public void clickDateOfBirthWidget(){clickOn(DateBirthWidget);}
-    public void selectBirthMonth(){
+    public void selectBirthDate(){
         getDriver().findElement(By.cssSelector(".react-datepicker__month-select option:nth-child(12)")).click();
         getDriver().findElement(By.cssSelector(".react-datepicker__year-select option:nth-child(89)")).click();
         getDriver().findElement(By.cssSelector(".react-datepicker__day--015")).click();

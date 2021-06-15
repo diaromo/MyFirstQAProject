@@ -17,9 +17,8 @@ import java.util.List;
 
 public class  ElementsPage extends PageObject {
 
-    //private WebDriver driver;
 
-//CSS for Elements Text Box Tests
+//CSS for Elements Text Box
 
     @FindBy(css = "#item-0")
     private WebElementFacade textBoxLink;
@@ -81,7 +80,7 @@ public class  ElementsPage extends PageObject {
     public void verifyTextBoxPageMsg(String message){ shouldContainText(message);}
     public void verifyUserInformation(String userInformation){shouldContainText(userInformation);}
 
-    //CSS for Elements Check Box Tests
+    //CSS for Elements Check Box
     @FindBy(css = "#item-1")
     private WebElementFacade checkBoxLink;
     @FindBy(css = ".rct-checkbox")
@@ -100,7 +99,7 @@ public class  ElementsPage extends PageObject {
     public void clickExpandButton(){clickOn(expandButtonTree);}
     public void verifyExpandedTreeMsg(String expandedTreeStructure){shouldContainText(expandedTreeStructure);}
 
-    //CSS for Elements Radio Box Tests
+    //CSS for Elements Radio Box
     @FindBy(css = "#item-2")
     private WebElementFacade radioButtonLink;
     @FindBy(css = "#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div:nth-child(1) > div:nth-child(2) > label")
@@ -296,7 +295,7 @@ public class  ElementsPage extends PageObject {
         return false;
     }
 
-    //Upload
+    //Upload -> Need to continue
     public void sendKeysUpload(){uploadButton.sendKeys("C:\\Users\\dianaromosan\\Downloads\\Diploma licenta Diana Romosan");}
 
 
