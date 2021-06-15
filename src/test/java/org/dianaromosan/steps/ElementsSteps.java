@@ -1,46 +1,43 @@
 package org.dianaromosan.steps;
 
 import net.thucydides.core.annotations.Step;
-import org.dianaromosan.pages.ElementsPage;
-import org.dianaromosan.pages.HomePage;
+import org.dianaromosan.pages.*;
 import org.junit.Assert;
 
 public class ElementsSteps {
-    private HomePage homePage;
-    private ElementsPage elementsPage;
 
+    private TextBoxPage textBoxPage;
+    private CheckBoxPage checkBoxPage;
+    private RadioButtonPage radioButtonPage;
+    private WebTablesPage webTablesPage;
+    private ButtonsPage buttonsPage;
+    private LinksPage linksPage;
+    private DownloadAndUploadPage downloadAndUploadPage;
 
-    //Steps for Text Box Tests
+    //Text box
     @Step
-    public void navigateToTextBox() {
-        homePage.open();
-        homePage.clickElementsLink();
-        elementsPage.clickTextBoxLink();
+    public void navigateToTextBox(){
+        textBoxPage.open();
     }
 
     @Step
-    public void clickSubmitButton() {
-        elementsPage.clickSubmitButton();
+    public void setUserName(String userName){
+        textBoxPage.setUserName(userName);
     }
 
     @Step
-    public void setUserName(String userName) {
-        elementsPage.setUserNameField(userName);
+    public void setUserEmail(String userEmail){
+        textBoxPage.setUserEmail(userEmail);
     }
 
     @Step
-    public void setUserEmail(String userEmail) {
-        elementsPage.setUserEmailField(userEmail);
+    public void setCurrentAddress(String currentAddress){
+        textBoxPage.setCurrentAddress(currentAddress);
     }
 
     @Step
-    public void setCurrentAddress(String currentAddress) {
-        elementsPage.setCurrentAddressField(currentAddress);
-    }
-
-    @Step
-    public void setPermanentAddress(String permanentAddress) {
-        elementsPage.setPermanentAddressField(permanentAddress);
+    public void setPermanentAddress(String permanentAddress){
+        textBoxPage.setPermanentAddress(permanentAddress);
     }
 
     @Step
@@ -49,133 +46,120 @@ public class ElementsSteps {
         setUserEmail(userEmail);
         setCurrentAddress(currentAddress);
         setPermanentAddress(permanentAddress);
-
     }
 
     @Step
-    public void verifyTextBoxMsg(String message) {
-        elementsPage.verifyTextBoxPageMsg(message);
+    public void clickSubmitButton(){
+        textBoxPage.clickSubmit();
     }
 
     @Step
-    public void verifyIfUserInfoIsDisplayed(String informationName) {
-        //Assert.assertTrue(elementsPage.verifyUserInfoIsDisplayed(informationName));
-        elementsPage.verifyUserInformation(informationName);
+    public void verifyForm(String name, String currentAddress, String permanentAddress){
+        Assert.assertTrue(textBoxPage.verifyForm(name, currentAddress,permanentAddress));
     }
 
-    //Steps for Check Box Tests
-    @Step
-    public void navigateToCheckBox() {
-        homePage.open();
-        homePage.clickElementsLink();
-        elementsPage.clickCheckBoxLink();
-    }
 
+    //Check box
     @Step
-    public void checkCheckBox() {
-        elementsPage.checkCheckBoxIcon();
+    public void navigateToCheckBox(){
+        checkBoxPage.open();
     }
 
     @Step
-    public void verifyCheckBoxMsg(String checkBoxMsg) {
-        elementsPage.verifyCheckBoxMsg(checkBoxMsg);
+    public void checkCheckBox(){
+        checkBoxPage.checkCheckBoxIcon();
     }
 
     @Step
-    public void clickExpandButton() {
-        elementsPage.clickExpandButton();
+    public void verifyCheckBoxMsg(String checkBoxMsg){
+        checkBoxPage.verifyCheckBoxMsg(checkBoxMsg);
     }
 
     @Step
-    public void verifyTreeStructure(String treeStructure) {
-        elementsPage.verifyExpandedTreeMsg(treeStructure);
-    }
-
-    //Steps for Radio Buttons
-    @Step
-    public void navigateToRadioButtons() {
-        homePage.open();
-        homePage.clickElementsLink();
-        elementsPage.clickRadioButtonLink();
+    public void clickExpandButton(){
+        checkBoxPage.clickExpandButton();
     }
 
     @Step
-    public void clickYesRadioButton() {
-        elementsPage.clickYesRadioButton();
+    public void verifyTreeStructure(String treeStructure){
+        checkBoxPage.verifyExpandedTreeMsg(treeStructure);
+    }
+
+    //Radio button
+    @Step
+    public void navigateToRadioButtons(){
+        radioButtonPage.open();
     }
 
     @Step
-    public void clickImpressiveRadioButton() {
-        elementsPage.clickImpressiveRadioButton();
+    public void clickYesRadioButton(){
+        radioButtonPage.clickYesRadioButton();
+    }
+
+    @Step
+    public void clickImpressiveRadioButton(){
+        radioButtonPage.clickImpressiveRadioButton();
     }
 
     @Step
     public void clickNoRadioButton() {
-        elementsPage.clickNoRadioButton();
+        radioButtonPage.clickNoRadioButton();
     }
 
     @Step
-    public void verifyYesMsg(String yesMsg) {
-        elementsPage.verifyYesMsg(yesMsg);
+    public void verifyYesMsg(String yesMsg){
+        radioButtonPage.verifyYesMsg(yesMsg);
     }
 
     @Step
-    public void verifyImpressiveMsg(String impressiveMsg) {
-        elementsPage.verifyImpressiveMsg(impressiveMsg);
+    public void verifyImpressiveMsg(String impressiveMsg){
+        radioButtonPage.verifyImpressiveMsg(impressiveMsg);
     }
 
-    //Steps for Web Tables
+    //Web Tables
     @Step
-    public void clickWebTablesLink() {
-        elementsPage.clickWebTablesLink();
-    }
-
-    @Step
-    public void clickAddButton() {
-        elementsPage.clickAddButton();
+    public void navigateToWebTableLink(){
+        webTablesPage.open();
     }
 
     @Step
-    public void setUserFirstNameReg(String firstNameReg) {
-        elementsPage.setUserFirstNameReg(firstNameReg);
+    public void clickAddButton(){
+        webTablesPage.clickAddButton();
     }
 
     @Step
-    public void setUserLastNameReg(String lastNameReg) {
-        elementsPage.setUserLastNameReg(lastNameReg);
+    public void setUserFirstNameReg(String firstNameReg){
+        webTablesPage.setUserFirstNameReg(firstNameReg);
     }
 
     @Step
-    public void setUserEmailReg(String emailReg) {
-        elementsPage.setUserEmailReg(emailReg);
+    public void setUserLastNameReg(String lastNameReg){
+        webTablesPage.setUserLastNameReg(lastNameReg);
     }
 
     @Step
-    public void setUserAgeReg(String ageReg) {
-        elementsPage.setUserAgeReg(ageReg);
+    public void setUserEmailReg(String emailReg){
+        webTablesPage.setUserEmailReg(emailReg);
     }
 
     @Step
-    public void setSalaryReg(String salaryReg) {
-        elementsPage.setSalaryReg(salaryReg);
+    public void setUserAgeReg(String ageReg){
+        webTablesPage.setUserAgeReg(ageReg);
     }
 
     @Step
-    public void setDepartmentReg(String departmentReg) {
-        elementsPage.setDepartmentReg(departmentReg);
+    public void setSalaryReg(String salaryReg){
+        webTablesPage.setSalaryReg(salaryReg);
     }
 
     @Step
-    public void clickSubmitRegButton() {
-        elementsPage.clickSubmitRegButton();
+    public void setDepartmentReg(String departmentReg){
+        webTablesPage.setDepartmentReg(departmentReg);
     }
 
     @Step
-    public void navigateToWebTableAndAdd() {
-        homePage.open();
-        homePage.clickElementsLink();
-        elementsPage.clickWebTablesLink();
-        elementsPage.clickAddButton();
+    public void clickSubmitRegButton(){
+        webTablesPage.clickSubmitRegButton();
     }
 
     @Step
@@ -190,96 +174,74 @@ public class ElementsSteps {
 
     @Step
     public void verifyIfNameIsAddedToWebTable(String firstName, String lastName) {
-        Assert.assertTrue(elementsPage.verifyNameIsAddedToWebTable(firstName, lastName));
+        Assert.assertTrue(webTablesPage.verifyNameIsAddedToWebTable(firstName, lastName));
     }
 
+    //Buttons
     @Step
-    public void navigateToButtonsLink() {
-        homePage.open();
-        homePage.clickElementsLink();
-        elementsPage.clickButtonsLink();
+    public void navigateToButtonsLink(){
+        buttonsPage.open();
     }
 
     @Step
     public void doubleClick() {
-        elementsPage.doubleClickButton();
+        buttonsPage.doubleClick();
     }
 
     @Step
     public void doubleClickMsgIsEqual(String doubleClickMsg1) {
-        elementsPage.doubleClickMsgisEqual(doubleClickMsg1);
+        buttonsPage.verifyDoubleClickMessage(doubleClickMsg1);
     }
 
     @Step
     public void switchToRightClickButton() {
-        elementsPage.switchToRightClick();
+        buttonsPage.switchToRightClick();
     }
 
     @Step
     public void rightClick() {
-        elementsPage.rightClick();
+        buttonsPage.rightClick();
     }
 
     @Step
     public void rightClickMsgIsEqual(String rightClickMsg1) {
-        elementsPage.rightClickMsgIsEqual(rightClickMsg1);
+        buttonsPage.verifyRightClickMessage(rightClickMsg1);
     }
 
-    //Links Steps
-
+    //Links
     @Step
     public void navigateToLink() {
-        homePage.open();
-        homePage.clickElementsLink();
-        elementsPage.clickLinkButton();
-
+        linksPage.open();
     }
 
     @Step
     public void clickHomeButton() {
-        elementsPage.clickHomeButton();
+        linksPage.clickHomeButton();
     }
 
     @Step
     public void checkNewTabOpens() {
-        elementsPage.switchNewTab();
+        linksPage.switchNewTab();
     }
 
-    //Broken links - Images
-    //@Step
-    //public void navigateToBrokenLinksAndImg(){
-    //homePage.open();
-    //homePage.clickElementsLink();
-    //elementsPage.clickBrokenLinksAndImg();}
-
-
-    /*@Step
-    public void checkBrokenLinks(){
-        elementsPage.getDriver();
-        elementsPage.linkIsValidOrNot();
-        elementsPage.verifyLinks;}*/
-
-    //Download File Steps
+    //Download and Upload
     @Step
     public void navigateToDownloadAndUpload() {
-        homePage.open();
-        homePage.clickElementsLink();
-        elementsPage.clickUploadAndDownloadLink();
+        downloadAndUploadPage.open();
     }
 
     @Step
     public void clickDownloadButton() {
-        elementsPage.clickDownloadButton();
+        downloadAndUploadPage.clickDownloadButton();
     }
 
     @Step
     public void verifyFileIsDownloaded(String downloadPath, String fileName) {
-        Assert.assertTrue(elementsPage.isFileDownloaded(downloadPath, fileName));
+        Assert.assertTrue(downloadAndUploadPage.isFileDownloaded(downloadPath, fileName));
     }
 
-    //Upload File Steps
     @Step
     public void clickUploadButton() {
-        elementsPage.sendKeysUpload();
+        downloadAndUploadPage.sendKeysUpload();
     }
 }

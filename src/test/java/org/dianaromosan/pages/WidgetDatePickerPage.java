@@ -1,14 +1,14 @@
 package org.dianaromosan.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
+import org.dianaromosan.utils.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 @DefaultUrl("https://demoqa.com/date-picker")
 
-public class WidgetDatePickerPage extends PageObject {
+public class WidgetDatePickerPage extends BasePage {
 
     public void openDatePikerPage(){open();}
 
@@ -25,7 +25,7 @@ public class WidgetDatePickerPage extends PageObject {
 
     public void checkDateIsCorrect(String date){
         WebElement selectedDate = getDriver().findElement(By.cssSelector("#datePickerMonthYearInput"));
-        Assert.assertEquals(date,selectedDate.getAttribute("value"));//Wrong element
+        Assert.assertEquals(date,selectedDate.getAttribute("value"));
 
     }
 }

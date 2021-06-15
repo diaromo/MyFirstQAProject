@@ -3,18 +3,14 @@ package org.dianaromosan.pages;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
+import org.dianaromosan.utils.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 @DefaultUrl("https://demoqa.com/forms")
 
-public class FormPage extends PageObject {
+public class FormPage extends BasePage {
 
-    //Forms - Practice forms
-
-    @FindBy(css = "#app > div > div > div.row > div:nth-child(1) > div > div > div:nth-child(2) > div")
-    private WebElementFacade practiceFormsLink;
     @FindBy(css = "#firstName")
     private WebElementFacade formFirstName;
     @FindBy(css = "#lastName")
@@ -29,36 +25,36 @@ public class FormPage extends PageObject {
     private WebElementFacade DateBirthWidget;
     @FindBy(css = "#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(2) > label")
     private WebElementFacade readingHobbies;
-    //Picture
+    //Picture upload missing
     @FindBy(css = "#currentAddress")
     private WebElementFacade formAddress;
-
-
-    public void clickPracticeFormsLink() {
-        clickOn(practiceFormsLink);
-    }
 
     public void setFormFirstName(String firstNameForm) {
         typeInto(formFirstName, firstNameForm);
     }
 
     public void setFormLastName(String lastNameForm) {
+
         typeInto(formLastname, lastNameForm);
     }
 
     public void setFormEmail(String emailForm) {
+
         typeInto(formEmail, emailForm);
     }
 
     public void clickFemaleGender() {
+
         clickOn(formFemaleGender);
     }
 
     public void setFormNumber(String numberForm) {
+
         typeInto(formUserNumber, numberForm);
     }
 
     public void clickDateOfBirthWidget() {
+
         clickOn(DateBirthWidget);
     }
 
@@ -70,6 +66,7 @@ public class FormPage extends PageObject {
     }
 
     public void clickReadingHobbies() {
+
         clickOn(readingHobbies);
     }
 
@@ -79,6 +76,7 @@ public class FormPage extends PageObject {
     }
 
     public void setFormAddress(String addressForm) {
+
         typeInto(formAddress, addressForm);
     }
 
@@ -95,6 +93,7 @@ public class FormPage extends PageObject {
     }
 
     public void clickSubmit() {
+
         getDriver().findElement(By.cssSelector("#submit")).click();
     }
 

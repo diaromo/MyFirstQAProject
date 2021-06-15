@@ -1,13 +1,13 @@
 package org.dianaromosan.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
+import org.dianaromosan.utils.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
 @DefaultUrl("https://demoqa.com/accordian")
 
-public class WidgetAccordianPage extends PageObject {
+public class WidgetAccordianPage extends BasePage {
 
     public void openAccordianPage(){open();}
 

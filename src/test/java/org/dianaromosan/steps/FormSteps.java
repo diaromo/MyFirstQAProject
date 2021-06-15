@@ -12,24 +12,27 @@ public class FormSteps {
         private HomePage homePage;
         private FormPage formPage;
 
-    @Step
-    public void clickPracticeForm(){
-        formPage.clickPracticeFormsLink(); }
+
     @Step
     public void setFromFirstName(String formFirstname){
-        formPage.setFormFirstName(formFirstname);}
+        formPage.setFormFirstName(formFirstname);
+    }
     @Step
     public void setFromLastName(String formLastname){
-        formPage.setFormLastName(formLastname);}
+        formPage.setFormLastName(formLastname);
+    }
     @Step
     public void setFromEmail(String formEmail){
-        formPage.setFormEmail(formEmail);}
+        formPage.setFormEmail(formEmail);
+    }
     @Step
     public void clickFemaleGender(){
-        formPage.clickFemaleGender();}
+        formPage.clickFemaleGender();
+    }
     @Step
     public void setFromNumber(String formNumber){
-        formPage.setFormNumber(formNumber);}
+        formPage.setFormNumber(formNumber);
+    }
     @Step
     public void clickDateBirthWidget(){
         formPage.clickDateOfBirthWidget();
@@ -40,14 +43,16 @@ public class FormSteps {
     }
     @Step
     public void clickReadingHobbies(){
-        formPage.clickReadingHobbies();}
+        formPage.clickReadingHobbies();
+    }
     @Step
     public void uploadPicture(){
         formPage.uploadPicture();
     }
     @Step
     public void setFromAddress(String formAddress){
-        formPage.setFormAddress(formAddress);}
+        formPage.setFormAddress(formAddress);
+    }
     @Step
     public void selectState(){
         formPage.selectState();
@@ -57,16 +62,16 @@ public class FormSteps {
         formPage.selectCity();
     }
     @Step
-    public void clickSubmit(){formPage.clickSubmit();}
+    public void clickSubmit(){
+        formPage.clickSubmit();
+    }
     @Step
-    public void verifyFormIsSubmitted(String submitConfirmationMsg){formPage.verifyFormIsSubmitted(submitConfirmationMsg);}
-
+    public void verifyFormIsSubmitted(String submitConfirmationMsg){
+        formPage.verifyFormIsSubmitted(submitConfirmationMsg);
+    }
     @Step
     public void navigateToForms(){
-        homePage.open();
-        homePage.clickFormsLink();
-        formPage.clickPracticeFormsLink();}
-
-
+        formPage.open();
+    }
 
 }

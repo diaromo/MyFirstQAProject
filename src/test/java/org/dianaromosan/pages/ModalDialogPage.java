@@ -1,19 +1,13 @@
 package org.dianaromosan.pages;
 
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
-import org.junit.Assert;
-import org.openqa.selenium.Alert;
+import org.dianaromosan.utils.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 @DefaultUrl("https://demoqa.com/modal-dialogs")
 
-public class ModalDialogPage extends PageObject {
+public class ModalDialogPage extends BasePage {
 
     /*@FindBy(css = "#showSmallModal")
     private WebElementFacade smallModalButton;

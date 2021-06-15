@@ -1,13 +1,13 @@
 package org.dianaromosan.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.pages.PageObject;
+import org.dianaromosan.utils.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 @DefaultUrl("https://demoqa.com/frames")
 
-public class FramesPage extends PageObject {
+public class FramesPage extends BasePage {
 
     public void openFramesWindow(){open();}
 

@@ -1,7 +1,6 @@
 package org.dianaromosan.features;
 
 import net.thucydides.core.annotations.Steps;
-import org.dianaromosan.steps.ElementsSteps;
 import org.dianaromosan.steps.FormSteps;
 import org.dianaromosan.utils.BaseTest;
 import org.junit.Test;
@@ -9,13 +8,11 @@ import org.junit.Test;
 public class FormTest extends BaseTest{
 
     @Steps
-    private ElementsSteps elementsSteps;
-    @Steps
     private FormSteps formSteps;
 
     //Forms Tests
     @Test
-    public void validFormTest(){
+    public void validCredentialFormTest(){
         formSteps.navigateToForms();
         formSteps.setFromFirstName("Diana");
         formSteps.setFromLastName("Romosan");
@@ -31,6 +28,5 @@ public class FormTest extends BaseTest{
         //formSteps.selectCity();
         formSteps.clickSubmit();
         formSteps.verifyFormIsSubmitted("Thanks for submitting the form");
-
     }
 }

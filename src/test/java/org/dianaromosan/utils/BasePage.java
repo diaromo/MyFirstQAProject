@@ -10,7 +10,14 @@ public class BasePage extends PageObject {
     public void doubleClick(WebElementFacade element) {
         Actions action = new Actions(getDriver());
         action.doubleClick(element).perform();
-
     }
 
-}
+    public void moveToElement(WebElementFacade element) {
+        Actions action = new Actions(getDriver());
+        action.moveToElement(element).perform();
+    }
+    public void rightClick (WebElementFacade element){
+        Actions action = new Actions(getDriver());
+        action.contextClick(element).perform();
+        }
+    }

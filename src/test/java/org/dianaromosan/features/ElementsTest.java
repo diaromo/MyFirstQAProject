@@ -2,118 +2,99 @@ package org.dianaromosan.features;
 
 import net.thucydides.core.annotations.Steps;
 import org.dianaromosan.steps.ElementsSteps;
-import org.dianaromosan.steps.FormSteps;
 import org.dianaromosan.utils.BaseTest;
-import org.junit.After;
+import org.dianaromosan.utils.EnvironmentConstants;
 import org.junit.Test;
-
 
 public class ElementsTest extends BaseTest {
 
     @Steps
     private ElementsSteps elementsSteps;
-    @Steps
-    private FormSteps formSteps;
 
-
-    private String name = "Diana Romosan";
-
-    //Text Box Tests
-    //Test 1 Go to Text Box Page, Fill in text fields with valid information and Submit
+    //Text box
     @Test
     public void validCredentialTest(){
         elementsSteps.navigateToTextBox();
-        elementsSteps.setUserInformationFields(name, "romosandiana@gmail.com", "Zorilor","Cluj");
+        elementsSteps.setUserInformationFields(EnvironmentConstants.FIRST_NAME, EnvironmentConstants.USER_EMAIL, EnvironmentConstants.ADDRESS,"Cluj");
         elementsSteps.clickSubmitButton();
-    //Assert
-        elementsSteps.verifyIfUserInfoIsDisplayed("Cluj");
+        elementsSteps.verifyForm(EnvironmentConstants.FIRST_NAME,EnvironmentConstants.ADDRESS,"Cluj");
+        //Need to fix assert - invalid Element?
     }
 
-    //Test 2 Go to Text Box Page, Leave all text fields blank and hit Submit
     @Test
     public void invalidCredentialTest(){
         elementsSteps.navigateToTextBox();
         elementsSteps.clickSubmitButton();
-    //Assert - WebPage is still TextBox Page
-        elementsSteps.verifyTextBoxMsg("Text Box");
+        //Need to assert
     }
 
-    //Check Box Tests
-    //Test 1 - Check Box is checked
-
+    //Check box
     @Test
-    public void checkCheckBox(){
+    public void homeCheckBoxIsChecked(){
         elementsSteps.navigateToCheckBox();
         elementsSteps.checkCheckBox();
-    //Assert all categories are displayed in confirmation msg
         elementsSteps.verifyCheckBoxMsg("home");
 
     }
-
-    //Test 2 - Check expand button works
     @Test
     public void checkExpandButton(){
         elementsSteps.navigateToCheckBox();
         elementsSteps.clickExpandButton();
-    //Assert all tree structure names are displayed in confirmation msg
         elementsSteps.verifyTreeStructure("Office");
     }
-
-    //Radio Button Tests
-    //Test 1,2,3 - Check Radio Buttons Work
+    //Radio button
     @Test
     public void selectYesOption(){
         elementsSteps.navigateToRadioButtons();
         elementsSteps.clickYesRadioButton();
         elementsSteps.verifyYesMsg("You have selected Yes");
     }
+
     @Test
     public void selectImpressiveOption(){
         elementsSteps.navigateToRadioButtons();
         elementsSteps.clickImpressiveRadioButton();
         elementsSteps.verifyImpressiveMsg("You have selected Impressive");
     }
+
     @Test
     public void selectNoOption(){
         elementsSteps.navigateToRadioButtons();
-        elementsSteps.clickNoRadioButton();}
+        elementsSteps.clickNoRadioButton();
         //No button doesn't work - how to assert?
-
-    //WebTables Tests
-    //Valid Add people to WebTableTest
+    }
+    
+    //Web Tables
     @Test
     public void validAddPeopleToWebTable() {
-        elementsSteps.navigateToWebTableAndAdd();
-        elementsSteps.fillInWebTableUserInfo("Diana", "Romosan", "romosandiana@gmail.com", "25", "20", "OFA");
-        elementsSteps.clickSubmitButton();
-        elementsSteps.verifyIfNameIsAddedToWebTable("Diana", "Romosan");}
-
-    //Buttons - validate buttons are working
+        elementsSteps.navigateToWebTableLink();
+        elementsSteps.clickAddButton();
+        elementsSteps.fillInWebTableUserInfo(EnvironmentConstants.FIRST_NAME, EnvironmentConstants.LAST_NAME, EnvironmentConstants.USER_EMAIL, "25", "20", "OFA");
+        elementsSteps.clickSubmitRegButton();
+        elementsSteps.verifyIfNameIsAddedToWebTable(EnvironmentConstants.FIRST_NAME, EnvironmentConstants.LAST_NAME);
+    }
+    
+    //Buttons
     @Test
-    public void buttonsWork() {
+    public void validDoubleAndRightButtonsTest() {
+
         elementsSteps.navigateToButtonsLink();
         elementsSteps.doubleClick();
         elementsSteps.doubleClickMsgIsEqual("You have done a double click");
         elementsSteps.switchToRightClickButton();
         elementsSteps.rightClick();
         elementsSteps.rightClickMsgIsEqual("You have done a right click");
-
     }
-    //Links - Home Link is opening in new window
+    
+    //Links
     @Test
     public void validHomeLink(){
         elementsSteps.navigateToLink();
         elementsSteps.clickHomeButton();
         elementsSteps.checkNewTabOpens();
     }
-    //Broken Links - Images
-    @Test
-    public void BrokenLink(){
-        //elementsSteps.navigateToBrokenLinksAndImg();
-
-    }
-
-    //Download and upload
+    
+    //Download and Upload
     @Test
     public void downloadFileWorks(){
         elementsSteps.navigateToDownloadAndUpload();
@@ -125,9 +106,4 @@ public class ElementsTest extends BaseTest {
         elementsSteps.navigateToDownloadAndUpload();
         elementsSteps.clickUploadButton();
     }
-
-
-
-
-
 }
