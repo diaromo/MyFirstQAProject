@@ -53,6 +53,8 @@ public class TextBoxPage extends BasePage{
                     webElementFacade.findElement(By.cssSelector(".border p:nth-child(3)")).getText().contains(currentAddress)&&
                     webElementFacade.findElement(By.cssSelector(".border p:nth-child(4)")).getText().contains(permanentAddress));
             return true;
-        }return false;
+        }
+        return false;
     }
+
 }

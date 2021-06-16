@@ -21,13 +21,6 @@ public class ElementsTest extends BaseTest {
         //Need to fix assert - invalid Element?
     }
 
-    @Test
-    public void invalidCredentialTest(){
-        elementsSteps.navigateToTextBox();
-        elementsSteps.clickSubmitButton();
-        //Need to assert
-    }
-
     //Check box
     @Test
     public void homeCheckBoxIsChecked(){
